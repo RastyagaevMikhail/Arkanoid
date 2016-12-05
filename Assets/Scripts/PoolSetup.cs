@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
+using UnityEngine.Networking;
 using System.Collections;
 
 [AddComponentMenu("Pool/PoolSetup")]
-public class PoolSetup : MonoBehaviour
+public class PoolSetup : NetworkBehaviour
 {
 
     [SerializeField]
@@ -17,9 +18,14 @@ public class PoolSetup : MonoBehaviour
         }
     }
 
-    void Awake()
+    public override void OnStartServer()
     {
-        Initalize();
+        base.OnStartServer();
+        Debug.Log("PoolSetup.isSetver = " + isServer);
+      
+        if (isServer)
+            Initalize();
+        
     }
 
     public  void Initalize()

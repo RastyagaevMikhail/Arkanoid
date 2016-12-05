@@ -5,6 +5,13 @@ using System.Collections;
 
 public class GameManager : NetworkBehaviour
 {
+    [SyncVar(hook="OnCatch")]
+    public int myScore = 0;
+
+    void OnCatch(int newScore)
+    {
+        Score = newScore;
+    }
 
     private static GameManager _instance = null;
 
@@ -16,20 +23,22 @@ public class GameManager : NetworkBehaviour
                 _instance = GameObject.FindObjectOfType<GameManager>();
             return _instance;
         }
-    } 
+    }
 
     public bool Spawn = false;
 
     public Text ScoreText;
-    [SyncVar]
-    private int score = 0;
+
+
+
+    
     public int Score
     {
-        get { return score; }
+        get { return myScore; }
         set
         {
-            score = value;
-            ScoreText.text = string.Format("Score {0}", score);
+            myScore = value;
+            ScoreText.text = string.Format("Score {0}", myScore);
         }
     }
 
@@ -41,11 +50,27 @@ public class GameManager : NetworkBehaviour
     [RPC]
     public void RpcGameOver()
     {
-        Score = 0;
 
-        spawner.Reset();
-        PoolManager.ReturnAllPollsObject();
+        if (isServer)
+        {
+            Score = 0;
+            spawner.Reset();
+            PoolManager.ReturnAllPollsObject();    
+            RpcOnClientGameOver();
+            NetworkServer.DisconnectAll();
+        }
     }
+
+    [ClientRpc]
+    void RpcOnClientGameOver()
+    {
+        Debug.Log("For Client in GameManager");
+        foreach (var obj in GameObject.FindGameObjectsWithTag("Ball"))
+        {
+            obj.GetComponent<PoolObject>().ReturnToPool();   
+        }        
+    }
+
     public void CalculateScore()
     {
         Score++;
@@ -53,6 +78,6 @@ public class GameManager : NetworkBehaviour
 
     public  void DebugLog(string Log)
     {
-        debug.text = Log;
+        debug.text += Log + "\n";
     }
 }

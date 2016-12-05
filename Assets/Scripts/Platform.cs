@@ -46,9 +46,7 @@ public class Platform : Unit2DNetwok
 
     void OnCollisionEnter2D(Collision2D coll)
     {
-        if (!isServer)
-            return;
-       
+        
         if (coll.gameObject.CompareTag("Ball"))
         {
             GameManager.Instatnce.CalculateScore();

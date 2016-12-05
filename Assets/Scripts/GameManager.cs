@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.Networking;
 using System.Collections;
@@ -29,9 +30,6 @@ public class GameManager : NetworkBehaviour
 
     public Text ScoreText;
 
-
-
-    
     public int Score
     {
         get { return myScore; }
@@ -50,7 +48,6 @@ public class GameManager : NetworkBehaviour
     [RPC]
     public void RpcGameOver()
     {
-
         if (isServer)
         {
             Score = 0;
@@ -58,9 +55,12 @@ public class GameManager : NetworkBehaviour
             PoolManager.ReturnAllPollsObject();    
             RpcOnClientGameOver();
             NetworkServer.DisconnectAll();
+            MyNetworkManager.Instance.StopServerGame();
+          //  SceneManager.LoadScene("Menu");
         }
     }
 
+    
     [ClientRpc]
     void RpcOnClientGameOver()
     {
@@ -79,5 +79,6 @@ public class GameManager : NetworkBehaviour
     public  void DebugLog(string Log)
     {
         debug.text += Log + "\n";
+        Debug.Log(Log);
     }
 }

@@ -25,6 +25,7 @@ public class Ball : Unit2DNetwok
     [RPC]
     public void RpcReset()
     {
+
         MyRigidbody2D.Sleep();
         pObj.ReturnToPool();
 

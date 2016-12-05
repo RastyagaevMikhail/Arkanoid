@@ -49,12 +49,12 @@
      <Compile Include="Assets\Scripts\Ball.cs" />
      <Compile Include="Assets\Scripts\BallSpawner.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
-     <Compile Include="Assets\Scripts\NewBehaviourScript.cs" />
-     <Compile Include="Assets\Scripts\ObjectPooling.cs" />
+     <Compile Include="Assets\Scripts\MyNetworkManager.cs" />
      <Compile Include="Assets\Scripts\Platform.cs" />
-     <Compile Include="Assets\Scripts\PoolManager.cs" />
-     <Compile Include="Assets\Scripts\PoolObject.cs" />
-     <Compile Include="Assets\Scripts\PoolSetup.cs" />
+     <Compile Include="Assets\Scripts\Pool\ObjectPooling.cs" />
+     <Compile Include="Assets\Scripts\Pool\PoolManager.cs" />
+     <Compile Include="Assets\Scripts\Pool\PoolObject.cs" />
+     <Compile Include="Assets\Scripts\Pool\PoolSetup.cs" />
      <Compile Include="Assets\Scripts\UI\Menu.cs" />
      <Compile Include="Assets\Scripts\UI\Pause.cs" />
      <Compile Include="Assets\Scripts\Unit2D.cs" />

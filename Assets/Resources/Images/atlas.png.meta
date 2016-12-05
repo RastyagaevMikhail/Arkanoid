@@ -1,15 +1,17 @@
 fileFormatVersion: 2
 guid: b559134d978406a4fba18ef9feecfa12
-timeCreated: 1480796360
+timeCreated: 1480915366
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: atlas_0
-    21300002: atlas_1
-    21300004: atlas_2
-    21300006: atlas_3
-    21300008: atlas_4
-    21300010: atlas_5
+    21300000: Ponchik
+    21300002: pad
+    21300004: Connect
+    21300006: Exit
+    21300008: Start
+    21300010: Button
+    21300012: Pause
+    21300014: Play
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -59,7 +61,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: atlas_0
+      name: Ponchik
       rect:
         serializedVersion: 2
         x: 0
@@ -72,7 +74,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: atlas_1
+      name: pad
       rect:
         serializedVersion: 2
         x: 289
@@ -85,7 +87,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: atlas_2
+      name: Connect
       rect:
         serializedVersion: 2
         x: 1297
@@ -98,7 +100,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: atlas_3
+      name: Exit
       rect:
         serializedVersion: 2
         x: 1297
@@ -111,7 +113,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: atlas_4
+      name: Start
       rect:
         serializedVersion: 2
         x: 1297
@@ -124,7 +126,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: atlas_5
+      name: Button
       rect:
         serializedVersion: 2
         x: 1296
@@ -134,6 +136,32 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 32, y: 55, z: 41, w: 45}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pause
+      rect:
+        serializedVersion: 2
+        x: 1573
+        y: 457
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Play
+      rect:
+        serializedVersion: 2
+        x: 1581
+        y: 306
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     outline: []
